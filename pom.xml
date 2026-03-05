@@ -4,33 +4,43 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example</groupId>
+  <groupId>com.clinic</groupId>
   <artifactId>clinic</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>clinic</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://www.clinic.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
+
 <!-- JavaFX Controls -->
 <dependency>
 <groupId>org.openjfx</groupId>
 <artifactId>javafx-controls</artifactId>
 <version>21</version>
 </dependency>
+
 <!-- JavaFX FXML -->
 <dependency>
 <groupId>org.openjfx</groupId>
 <artifactId>javafx-fxml</artifactId>
 <version>21</version>
 </dependency>
+
+<!-- MySQL -->
+<dependency>
+<groupId>com.mysql</groupId>
+<artifactId>mysql-connector-j</artifactId>
+<version>8.4.0</version>
+</dependency>
+
 </dependencies>
 
   <build>
@@ -81,7 +91,7 @@
 
 <version>0.0.8</version>
 <configuration>
-<mainClass>com.example.clinic.App</mainClass>
+<mainClass>com.clinic.MainApp</mainClass>
 </configuration>
 </plugin>
       </plugins>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.clinic.controller.LoginController"
+      spacing="12" alignment="CENTER" prefWidth="420" prefHeight="320">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <Text text="Clinic Appointment System" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label text="Login" style="-fx-font-size: 16px;"/>
+
+    <TextField fx:id="txtUsername" promptText="Username"/>
+    <PasswordField fx:id="txtPassword" promptText="Password"/>
+
+    <Button fx:id="btnLogin" text="Login" onAction="#handleLogin">
+        <tooltip>
+            <Tooltip text="Click to login"/>
+        </tooltip>
+    </Button>
+
+    <Button fx:id="btnGoRegister" text="Create account" onAction="#handleGoRegister"/>
+</VBox>
