@@ -1,0 +1,17 @@
+# Java
+*.class
+*.log
+
+# Maven
+target/
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# JavaFX build
+out/
+bin/
