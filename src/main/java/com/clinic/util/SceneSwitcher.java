@@ -13,9 +13,16 @@ public class SceneSwitcher {
         try {
             Parent root = FXMLLoader.load(SceneSwitcher.class.getResource(fxmlPath));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            scene.getStylesheets().add(SceneSwitcher.class.getResource("/css/style.css").toExternalForm()
+            );
+
+            stage.setScene(scene);
             stage.setTitle(title);
+            stage.setMaximized(true);
             stage.show();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -2,32 +2,43 @@ CREATE DATABASE clinic_db;
 
 USE clinic_db;
 
+DROP TABLE IF EXISTS appointments;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS cancelled_appointments;
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
+    nric VARCHAR(20) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    full_name VARCHAR(100),
-    phone VARCHAR(20),
+    full_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    role VARCHAR(20) NOT NULL DEFAULT 'user',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE appointments (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    patient_name VARCHAR(100) NOT NULL,
-    doctor_name VARCHAR(100),
+    appointment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    doctor_name VARCHAR(50) NOT NULL,
     appointment_date DATE NOT NULL,
-    appointment_time TIME NOT NULL,
-    status VARCHAR(20) DEFAULT 'BOOKED'
+    appointment_time VARCHAR(20) NOT NULL,
+    notes VARCHAR(255),
+    status VARCHAR(20) NOT NULL DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_appointments_user
+        FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO users (username, password, full_name, phone)
-VALUES ('wano', '123456', 'Wan Nur Humairah', '0123456789');
+-- create one admin account
+INSERT INTO users (username, password, full_name, phone, nric, role)
+VALUES ('admin', 'admin123', 'System Admin', '0123456789', '000000000000', 'admin');
 
-INSERT INTO appointments (patient_name, doctor_name, appointment_date, appointment_time)
-VALUES ('Wan Nur Humairah', 'Dr Ahmad', '2026-03-10', '10:30:00');
+show tables;
 
-SHOW TABLES;
+select * from users;
+select * from appointments;
 
-SELECT * FROM users;
-SELECT * FROM appointments;
+SHOW INDEX FROM appointments;
 
+ALTER TABLE appointments DROP INDEX unique_doctor_slot;

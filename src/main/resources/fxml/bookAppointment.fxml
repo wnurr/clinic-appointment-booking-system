@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DateCell?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.clinic.controller.BookAppointmentController"
+           prefWidth="900" prefHeight="600"
+           style="-fx-background-image: url('/images/dashboard.jpg');
+                  -fx-background-size: cover;
+                  -fx-background-position: center center;">
+
+    <VBox alignment="CENTER" spacing="18" prefWidth="750" prefHeight="520">
+        <padding>
+            <Insets top="25" right="25" bottom="25" left="25"/>
+        </padding>
+
+        <VBox maxWidth="620"
+              spacing="18"
+              style="-fx-background-color: white;
+                     -fx-background-radius: 18;
+                     -fx-padding: 28;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 18, 0.2, 0, 4);">
+
+            <VBox spacing="6" alignment="CENTER">
+                <Text text="Book Appointment"
+                      style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #1f3b5b;"/>
+                <Label text="Choose doctor, date and available slot"
+                       style="-fx-font-size: 13px; -fx-text-fill: #6b7a8f;"/>
+            </VBox>
+
+            <Separator />
+
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="140" halignment="RIGHT"/>
+                    <ColumnConstraints minWidth="350"/>
+                </columnConstraints>
+
+                <Label text="Doctor:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #334155;"/>
+                <HBox spacing="16" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <children>
+                        <RadioButton fx:id="rbDrAli" text="Dr Ali"/>
+                        <RadioButton fx:id="rbDrSarah" text="Dr Sarah"/>
+                        <RadioButton fx:id="rbDrJohn" text="Dr John"/>
+                    </children>
+                </HBox>
+
+                <Label text="Appointment Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #334155;"/>
+                <DatePicker fx:id="dpAppointmentDate"
+                            prefWidth="220"
+                            style="-fx-background-radius: 10; -fx-border-radius: 10;"
+                            GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Available Time:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #334155;"/>
+                <ComboBox fx:id="cbAppointmentTime"
+                          promptText="Select available time"
+                          prefWidth="220"
+                          disable="true"
+                          style="-fx-background-radius: 10; -fx-border-radius: 10;"
+                          GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Notes:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #334155;"/>
+                <TextArea fx:id="txtNotes"
+                          promptText="Enter notes if any"
+                          prefRowCount="4"
+                          wrapText="true"
+                          style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 8;"
+                          GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label fx:id="lblAvailabilityInfo"
+                       text="Choose doctor and date to view available slots"
+                       style="-fx-text-fill: #64748b; -fx-font-size: 12px;"
+                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Book Appointment"
+                        onAction="#handleBookAppointment"
+                        style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 18;"/>
+                <Button text="Reset"
+                        onAction="#handleReset"
+                        style="-fx-background-color: #e2e8f0; -fx-text-fill: #1e293b; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 18;"/>
+                <Button text="Back to Dashboard"
+                        onAction="#handleBack"
+                        style="-fx-background-color: #0f172a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 18;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</StackPane>

@@ -5,28 +5,76 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.clinic.controller.LoginController"
-      spacing="12" alignment="CENTER" prefWidth="420" prefHeight="320">
-    <padding>
-        <Insets top="24" right="24" bottom="24" left="24"/>
-    </padding>
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.clinic.controller.LoginController"
+           alignment="CENTER"
+           styleClass="auth-root">
 
-    <Text text="Clinic Appointment System" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-    <Label text="Login" style="-fx-font-size: 16px;"/>
+    <VBox alignment="CENTER"
+          spacing="18"
+          prefWidth="420"
+          maxWidth="420"
+          maxHeight="420"
+          styleClass="auth-card">
+        <padding>
+            <Insets top="34" right="34" bottom="34" left="34"/>
+        </padding>
 
-    <TextField fx:id="txtUsername" promptText="Username"/>
-    <PasswordField fx:id="txtPassword" promptText="Password"/>
+        <VBox alignment="CENTER" spacing="6">
+            <Text text="Clinic Appointment System" styleClass="auth-title"/>
+            <Label text="Welcome back" styleClass="auth-subtitle"/>
+        </VBox>
 
-    <Button fx:id="btnLogin" text="Login" onAction="#handleLogin">
-        <tooltip>
-            <Tooltip text="Click to login"/>
-        </tooltip>
-    </Button>
+        <VBox spacing="8" alignment="CENTER_LEFT">
+            <Label text="Username" styleClass="field-label"/>
+            <TextField fx:id="txtUsername"
+                       promptText="Enter your username"
+                       prefWidth="320"
+                       styleClass="auth-field"/>
+        </VBox>
 
-    <Button fx:id="btnGoRegister" text="Create account" onAction="#handleGoRegister"/>
-</VBox>
+        <VBox spacing="8" alignment="CENTER_LEFT">
+            <Label text="Password" styleClass="field-label"/>
+            <StackPane prefWidth="320">
+                <PasswordField fx:id="txtPassword"
+                               promptText="Enter your password"
+                               styleClass="auth-field auth-password-field"/>
+
+                <TextField fx:id="txtPasswordVisible"
+                           promptText="Enter your password"
+                           visible="false"
+                           managed="false"
+                           styleClass="auth-field auth-password-field"/>
+
+                <Button fx:id="iconTogglePassword"
+                        text="Show"
+                        onAction="#handleTogglePassword"
+                        focusTraversable="false"
+                        styleClass="password-toggle"
+                        StackPane.alignment="CENTER_RIGHT"/>
+            </StackPane>
+        </VBox>
+
+        <Button fx:id="btnLogin"
+                text="Login"
+                style="-fx-font-size: 14px;"
+                onAction="#handleLogin"
+                prefWidth="100"
+                styleClass="primary-button auth-button"/>
+
+        <HBox alignment="CENTER" spacing="6">
+            <Label text="Don’t have an account?" styleClass="auth-footer-text"/>
+            <Button fx:id="btnGoRegister"
+                    text="Create account"
+                    onAction="#handleGoRegister"
+                    focusTraversable="false"
+                    styleClass="link-button"/>
+        </HBox>
+    </VBox>
+</StackPane>

@@ -10,17 +10,16 @@ public class DBConnection {
     private static final String USER = "root";
     private static final String PASSWORD = "Oneknow26";
 
-    public static Connection getConnection() {
+public static Connection getConnection() {
 
-        Connection conn = null;
+    Connection conn = null;
 
-        try {
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Database connected successfully!");
-        } catch (SQLException e) {
-            System.err.println("Database connection failed: " + e.getMessage());
-        }
-
-        return conn;
+    try {
+        conn = DriverManager.getConnection(URL, USER, PASSWORD);
+    } catch (SQLException e) {
+        System.err.println("Database connection failed: " + e.getMessage());
     }
+
+    return conn;
+}
 }

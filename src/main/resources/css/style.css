@@ -1,0 +1,226 @@
+/* =========================
+   GLOBAL STYLE
+   ========================= */
+
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #F4F6F8;
+}
+
+.label {
+    -fx-font-size: 13px;
+}
+
+.text-field, .password-field, .text-area, .combo-box, .date-picker {
+    -fx-font-size: 13px;
+}
+
+/* =========================
+   TITLES
+   ========================= */
+
+.title-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #2C3E50;
+}
+
+.subtitle-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: #555555;
+}
+
+/* =========================
+   INPUT FIELDS
+   ========================= */
+
+.text-field, .password-field, .text-area {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #D1D5DB;
+    -fx-background-color: white;
+    -fx-padding: 10 12;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused {
+    -fx-border-color: #2A7DE1;
+    -fx-background-color: white;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button {
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: #2E8B57;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #267349;
+}
+
+.secondary-button {
+    -fx-background-color: #E8F5F1;
+    -fx-text-fill: #1F6F5F;
+    -fx-border-color: #B7DDD4;
+    -fx-border-radius: 10;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #DDF1EB;
+}
+
+.danger-button {
+    -fx-background-color: #E74C3C;
+    -fx-text-fill: white;
+}
+
+.danger-button:hover {
+    -fx-background-color: #C0392B;
+}
+
+/* =========================
+   CARD STYLE
+   ========================= */
+
+.card {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 15;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 15, 0.3, 0, 5);
+}
+
+/* =========================
+   TABLE STYLE
+   ========================= */
+
+.table-view {
+    -fx-background-radius: 8;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2A7DE1;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .label {
+    -fx-text-fill: white;
+}
+
+/* =========================
+   MENU BAR
+   ========================= */
+
+.menu-bar {
+    -fx-background-color: #2A7DE1;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+}
+
+/* =========================
+   AUTH PAGES (LOGIN / REGISTER)
+   ========================= */
+
+.auth-root {
+    -fx-background-image: url('/images/bg.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.auth-card {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 20;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 25, 0.2, 0, 8);
+}
+
+.auth-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-fill: #173B32;
+}
+
+.auth-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+}
+
+.auth-field {
+    -fx-pref-height: 38;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #D1D5DB;
+    -fx-background-color: white;
+    -fx-padding: 0 10;
+}
+
+.auth-field:focused {
+    -fx-border-color: #2A7DE1;
+}
+
+.auth-password-field {
+    -fx-padding: 0 55 0 10;
+}
+
+.auth-button {
+    -fx-pref-height: 40;
+    -fx-background-radius: 10;
+}
+
+.password-toggle {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2E8B57;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.password-toggle:hover {
+    -fx-underline: true;
+}
+
+.helper-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #64748B;
+}
+
+.terms-checkbox {
+    -fx-font-size: 12px;
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2e378b;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+}
+
+.link-button:hover {
+    -fx-underline: true;
+}
+
+.auth-footer-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+}

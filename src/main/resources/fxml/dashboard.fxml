@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.clinic.controller.DashboardController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-image: url('/images/dashboard.jpg');
+                  -fx-background-size: cover;
+                  -fx-background-position: center center;">
+
+    <center>
+        <StackPane>
+            <VBox alignment="CENTER" spacing="25">
+                <padding>
+                    <Insets top="40" right="40" bottom="40" left="40"/>
+                </padding>
+
+                <!-- Welcome Card -->
+                <VBox alignment="CENTER" spacing="10"
+                      maxWidth="650"
+                      style="-fx-background-color: rgba(255,255,255,0.95);
+                             -fx-background-radius: 20;
+                             -fx-padding: 30;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 18, 0.2, 0, 5);">
+
+                    <Text text="Clinic Appointment Dashboard"
+                          style="-fx-font-size: 28px;
+                                 -fx-font-weight: bold;
+                                 -fx-fill: #1f3c88;"/>
+
+                    <Label fx:id="welcomeLabel"
+       text="Welcome!"
+       style="-fx-font-size: 20px;
+              -fx-text-fill: #4f5d75;
+              -fx-font-weight: bold;"
+              />
+
+                    <Label text="Manage your appointments easily and stay organized."
+                           style="-fx-font-size: 13px;
+                                  -fx-text-fill: #6b7280;"/>
+                </VBox>
+
+                <!-- Action Cards -->
+                <HBox alignment="CENTER" spacing="40">
+
+                    <!-- Book Appointment Card -->
+                    <VBox alignment="CENTER" spacing="12"
+                          prefWidth="300" prefHeight="180"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 18;
+                                 -fx-padding: 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 12, 0.2, 0, 4);">
+
+                        <Text text="📅"
+                              style="-fx-font-size: 34px;"/>
+
+                        <Label text="Book Appointment"
+                               style="-fx-font-size: 18px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #1f3c88;"/>
+
+                        <Label text="Schedule a new clinic appointment quickly."
+                               wrapText="true"
+                               alignment="CENTER"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #6b7280;"/>
+
+                        <Button text="Book Now"
+                                onAction="#handleBookAppointment"
+                                prefWidth="140" prefHeight="40"
+                                style="-fx-background-color: #4da6ff;
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 14px;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 10;
+                                       -fx-cursor: hand;"/>
+                    </VBox>
+
+                    <!-- My Appointments Card -->
+                    <VBox alignment="CENTER" spacing="12"
+                          prefWidth="300" prefHeight="180"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 18;
+                                 -fx-padding: 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 12, 0.2, 0, 4);">
+
+                     <Text text="📋"      
+                              style="-fx-font-size: 34px;"/>
+
+                        <Label text="My Appointments"
+                               style="-fx-font-size: 18px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #1f3c88;"/>
+
+                        <Label text="View and manage your booked appointments."
+                               wrapText="true"
+                               alignment="CENTER"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #6b7280;"/>
+
+                        <Button text="View"
+                                onAction="#handleMyAppointments"
+                                prefWidth="140" prefHeight="40"
+                                style="-fx-background-color: #66c2a5;
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 14px;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 10;
+                                       -fx-cursor: hand;"/>
+                    </VBox>
+
+<!-- My Profile Card -->
+<VBox alignment="CENTER" spacing="12"
+      prefWidth="300" prefHeight="180"
+      style="-fx-background-color: white;
+             -fx-background-radius: 18;
+             -fx-padding: 20;
+             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 12, 0.2, 0, 4);">
+
+    <Text text="👤"
+          style="-fx-font-size: 34px;"/>
+
+    <Label text="My Profile"
+           style="-fx-font-size: 18px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #1f3c88;"/>
+
+    <Label text="View your personal information and details."
+           wrapText="true"
+           alignment="CENTER"
+           style="-fx-font-size: 12px;
+                  -fx-text-fill: #6b7280;"/>
+
+    <Button text="Open"
+            onAction="#handleViewProfile"
+            prefWidth="140" prefHeight="40"
+            style="-fx-background-color: #7c83fd;
+                   -fx-text-fill: white;
+                   -fx-font-size: 14px;
+                   -fx-font-weight: bold;
+                   -fx-background-radius: 10;
+                   -fx-cursor: hand;"/>
+</VBox>
+        
+                    <!-- Logout Card -->
+                    <VBox alignment="CENTER" spacing="12"
+                          prefWidth="300" prefHeight="180"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 18;
+                                 -fx-padding: 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 12, 0.2, 0, 4);">
+
+                        <Text text="🚪"
+                              style="-fx-font-size: 34px;"/>
+
+                        <Label text="Logout"
+                               style="-fx-font-size: 18px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #1f3c88;"/>
+
+                        <Label text="Securely sign out from the system."
+                               wrapText="true"
+                               alignment="CENTER"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #6b7280;"/>
+
+                        <Button text="Logout"
+                                onAction="#handleLogout"
+                                prefWidth="140" prefHeight="40"
+                                style="-fx-background-color: #ff6b6b;
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 14px;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 10;
+                                       -fx-cursor: hand;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+
+</BorderPane>
